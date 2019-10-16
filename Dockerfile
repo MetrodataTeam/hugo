@@ -16,6 +16,7 @@ ARG CGO=0
 ENV CGO_ENABLED=${CGO}
 ENV GOOS=linux
 
+ARG HUGO_BUILD_TAGS=extended
 # default non-existent build tag so -tags always has an arg
 ARG BUILD_TAGS="99notag"
 RUN go install -ldflags '-w -extldflags "-static"' -tags ${BUILD_TAGS}
