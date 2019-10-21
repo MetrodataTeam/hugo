@@ -23,7 +23,7 @@ RUN go install -ldflags '-w -extldflags "-static"' -tags ${BUILD_TAGS}
 
 # ---
 
-FROM alpine:3.9
+FROM metrodatatech/alpine:git
 RUN apk add --no-cache ca-certificates
 COPY --from=build /go/bin/hugo /hugo
 ARG  WORKDIR="/site"
