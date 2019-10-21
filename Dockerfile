@@ -30,5 +30,4 @@ ARG  WORKDIR="/site"
 WORKDIR ${WORKDIR}
 VOLUME  ${WORKDIR}
 EXPOSE  1313
-ENTRYPOINT [ "/hugo" ]
-CMD [ "--help" ]
+CMD /hugo server --bind=0.0.0.0
